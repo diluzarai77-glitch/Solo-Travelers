@@ -1,0 +1,401 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background: url('images/background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    position: relative;
+}
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(231, 234, 235, 0.5); 
+    z-index: 0;
+}
+.dashboard-container, .navbar, .modal, .chat-modal-content {
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+/* Dashboard content styling */
+.dashboard-container {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 20px;
+    border-radius: 12px;
+    margin: 20px auto;
+    max-width: 1200px;
+}
+
+/* Centered container for login/register */
+.center-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Card */
+.card {
+    background: #fff;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    width: 100%;
+    max-width: 400px;
+}
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+.card h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+/* Forms */
+form input, form button {
+    width: 100%;
+    padding: 12px 15px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    outline: none;
+    font-size: 15px;
+    transition: 0.3s;
+}
+form input:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 10px rgba(52,152,219,0.2);
+}
+form button {
+    background: #3498db;
+    color: #fff;
+    border: none;
+    font-weight: 600;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+form button:hover {
+    background: #2980b9;
+    transform: scale(1.03);
+}
+
+/* Links */
+.card a {
+    text-align: center;
+    display: block;
+    margin-top: 10px;
+    color: #3498db;
+}
+
+/* Navbar */
+.navbar {
+    background: #3498db;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 0 0 12px 12px;
+    color: #fff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+.navbar h2 {
+    font-weight: 600;
+}
+.navbar a {
+    color: #fff;
+    margin-left: 15px;
+    font-weight: 500;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+.navbar a:hover {
+    background: rgba(255,255,255,0.2);
+}
+
+/* Dashboard Cards */
+.dashboard-container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 30px auto;
+}
+.trip-card {
+    background: #fff;
+    padding: 20px 25px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.trip-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+}
+.trip-card h3 {
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+.trip-card p {
+    margin-bottom: 8px;
+}
+.matches {
+    background: #f1f5f9;
+    padding: 10px 12px;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+/* Add Trip Form */
+.add-trip-form {
+    width: 90%;
+    max-width: 500px;
+    margin: 30px auto;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(15px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+.fadeIn {
+    animation: fadeIn 0.8s ease-in;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px){
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .navbar a { margin: 5px 0 0 0; }
+}
+.section-title {
+    margin: 30px 0 15px;
+    font-size: 22px;
+    color: #2c3e50;
+}
+
+/* Destination cards */
+.destination-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.destination-card {
+    background: #fff;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.destination-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 35px rgba(0,0,0,0.15);
+}
+
+.destination-card img {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+}
+
+.destination-info {
+    padding: 15px;
+}
+
+.destination-info h3 {
+    margin-bottom: 6px;
+}
+
+.destination-info p {
+    font-size: 14px;
+    color: #555;
+}
+
+.destination-info a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 14px;
+    background: #3498db;
+    color: #fff;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+/* Trip cards */
+.trip-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 14px;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    transition: 0.3s;
+}
+
+.trip-card:hover {
+    transform: translateY(-4px);
+}
+
+.matches {
+    background: #f1f5f9;
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+/* MODAL */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 25px;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px; 
+}
+
+.logo {
+    width: 80px;      
+    height: 80px;
+    border-radius: 50%; 
+    object-fit: cover;  
+    border: 2px solid #6a11cb; 
+}
+
+.logo-container h2 {
+    font-size: 1.5rem;
+    color: #333;
+    margin: 0;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 25px;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    flex-wrap: wrap; 
+}
+
+/* Left logo */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #6a11cb; 
+}
+
+/* Center slogan */
+.slogan {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #6a11cb;
+    text-align: center;
+    flex: 1; 
+}
+
+/* Right buttons */
+.nav-links {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+/* Optional: adjust h2 near logo */
+.logo-container h2 {
+    font-size: 1.5rem;
+    color: #333;
+    margin: 0;
+}
+
+/* Common button style */
+button, .btn-primary, .btn-ghost, .card-btn {
+    font-family: 'Arial', sans-serif;
+    font-weight: 600;
+    border: none;
+    border-radius: 30px; 
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Primary button */
+.btn-primary {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: #fff;
+    box-shadow: 0 6px 20px rgba(106,17,203,0.3);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(106,17,203,0.4);
+    background: linear-gradient(135deg, #2575fc, #6a11cb);
+}
+
+/* Ghost / outline button */
+.btn-ghost {
+    background: transparent;
+    color: #6a11cb;
+    border: 2px solid #6a11cb;
+}
+
+.btn-ghost:hover {
+    background: #6a11cb;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(106,17,203,0.3);
+}
+
+/* Card buttons */
+.card-btn {
+    background: linear-gradient(90deg, #6660df, #88c0e3);
+    color: #fff;
+    padding: 8px 15px;
+    font-size: 0.95rem;
+}
+
+.card-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(255,126,95,0.3);
+}
+
+/* Optional: smooth transition for all buttons */
+button, .btn-primary, .btn-ghost, .card-btn {
+    transition: transform 0.2s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
